@@ -1,8 +1,9 @@
 import "./HomePage.css";
-import { cards } from "../../data/cards";
+
 import { Card } from "../card/Card";
 
 export default function HomePage(props) {
+  const { cards, toggleBookmark } = props;
   return (
     <section
       className="page"
@@ -19,6 +20,7 @@ export default function HomePage(props) {
               answer={answer}
               tags={tags}
               isBookmarked={isBookmarked}
+              handleClickBookmarkIcon={() => toggleBookmark(index)}
             />
           );
         })}
